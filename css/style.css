@@ -593,3 +593,84 @@ iframe{
         margin: 0 auto;
     }
 }
+
+/* GALLERY */
+
+.gallery-container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 8%;
+}
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 300px;  /* sets the row height */
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+}
+.gallery img{
+    width: 100%;  /* Set a fixed width */
+    height: 100%; /* Set a fixed height */
+    object-fit: contain; /* This will cover the area of the container without stretching the image */
+    cursor: pointer;
+    opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.gallery img:hover {
+    transform: scale(1.025);
+	opacity: 0.75;
+}
+
+#lightbox {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+#lightbox.active{
+    display: block;
+    /* justify-content: center; */
+    /* align-items: center; */
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#lightbox img{
+    max-width: 80%;
+    max-height: 80%;
+    padding: 8px;
+    display: block;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* border: 2px solid white; */
+    margin: 0 auto;
+
+}
+
+figcaption {
+    color: #fff; /* Choose appropriate color for visibility */
+    background-color: rgba(0, 0, 0, 0.7); /* Optional: background to make text more legible */
+    padding: 10px;
+    font-size: 1rem;
+    text-align: center;
+    max-width: 80%; /* Match the image width or set as needed */
+    margin: 1rem auto; /*  This centers the caption */
+  }
+  
