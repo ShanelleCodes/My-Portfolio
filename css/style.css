@@ -412,6 +412,39 @@ header{
     opacity: .75;
 }
 
+/* Tutorials */
+
+.my-tutorials{
+    text-align: center;
+}
+.section__title--turorials{
+    color: var(--clr-accent);
+    /* text-align: center; */
+}
+
+.tutorials h3{
+    text-align: center;
+}
+
+.tutorials p{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1em;
+    text-align:justify;  
+    text-justify:auto;
+}
+
+.tutorial__link a{
+    color: var(--clr-accent);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.tutorial__link a:hover{
+    opacity: .75;
+    text-decoration: underline;
+}
+
 /* Footer */
 
 .footer{
@@ -495,3 +528,5 @@ iframe{
     height: 300px;
     width: 500px;
 }
+
+
