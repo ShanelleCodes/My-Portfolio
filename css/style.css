@@ -370,6 +370,34 @@ header{
     }
 }
 
+@media (max-width: 600px){
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 50px;
+        grid-template-areas: 
+            "title img"
+            "subtitle img"
+            "text img";
+        column-gap: 2em;
+    }
+    .section__subtitle--about {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        width: calc(100% + 2em);
+        padding-left: 1em;
+        padding-right: calc(200px + 2em);
+    }
+    .about-me__img {
+        grid-area: img;
+        max-height: 200px;
+        /* min-height: 300px; */
+        /* position: relative; */
+        z-index: 2;
+    }
+}
+
 /*Projects*/
 
 .projects{
@@ -410,6 +438,13 @@ header{
 .portfolio__item:focus .portfolio__img {
     transform: scale(1.2);
     opacity: .75;
+}
+
+/* project01 */
+
+.rick__vid--click:hover{
+    /* opacity: .90; */
+    filter: drop-shadow(-1px 0px 20px #2de530) hue-rotate(20deg);
 }
 
 /* Tutorials */
