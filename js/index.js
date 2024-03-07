@@ -5,7 +5,7 @@ const lightbox = document.createElement('div')
 lightbox.id = 'lightbox'
 document.body.appendChild(lightbox)
 
-const images = document.querySelectorAll('img.gallery-img')
+const images = document.querySelectorAll('div.gallery-img > img')
 images.forEach(image => {
     image.addEventListener('click', e => {
         lightbox.classList.add('active')
@@ -45,6 +45,27 @@ navLinks.forEach(link => {
         document.body.classList.remove('nav-open');
     })
 });
+
+let filterItem = document.querySelector('.imgs-links')
+let filterImages = document.querySelectorAll('.gallery-img')
+
+window.addEventListener('load', ()=>{
+    filterItem.addEventListener('click',(selectedItem)=>{
+        if(selectedItem.target.classList.contains('img-link')){
+            document.querySelector('.filter-active').classList.remove('filter-active');
+            selectedItem.target.classList.add('filter-active');
+            let filterName = selectedItem.target.getAttribute('data-name');
+            filterImages.forEach((image)=>{
+                let changeImages = image.getAttribute('data-name');
+                if((changeImages == filterName ) || filterName == 'all'){
+                    image.style.display='grid'
+                }else{
+                    image.style.display='none'
+                }
+            })
+        }
+    })
+})
 
 
 
